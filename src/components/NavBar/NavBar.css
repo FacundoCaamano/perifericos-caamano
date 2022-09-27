@@ -1,0 +1,25 @@
+.list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+li{
+    margin: 50px;
+}
+a{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.logo{
+    height: 100px;
+    margin: 10px;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+

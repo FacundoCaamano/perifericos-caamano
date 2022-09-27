@@ -1,0 +1,10 @@
+.icono-contenedor{
+    display: flex;
+    align-items: center;
+    margin: 0 50px 0 0;
+    
+}
+.icono-contenedor-svg{
+    height: 30px;
+    margin: 0 20px;
+}
