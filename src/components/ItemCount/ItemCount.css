@@ -1,0 +1,9 @@
+.contenedor-boton{
+    background-color: white;
+    border: 5px solid red;
+    padding: 10px;
+}
+
+span{
+    color: black;
+}
