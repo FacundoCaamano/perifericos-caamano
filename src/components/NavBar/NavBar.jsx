@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 export const NavBar=() =>{
     return (
         <nav className="navegacion">
-            <img className="logo" src="https://cdn-icons-png.flaticon.com/512/2868/2868132.png" alt="logo" />
+            <NavLink to='/'><img className="logo" src="https://cdn-icons-png.flaticon.com/512/2868/2868132.png" alt="logo" /></NavLink>
             <ul className="list">
                 <li>
                     <NavLink to='/'>inicio</NavLink>

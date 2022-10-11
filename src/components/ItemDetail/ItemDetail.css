@@ -1,0 +1,24 @@
+
+.detalles__productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+.detalles__productos--info{
+    border: 3px dashed rgb(138, 98, 224);
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.etiquetas{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
