@@ -10,13 +10,13 @@ export const NavBar=() =>{
                     <NavLink to='/'>inicio</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/categoria/mouse'>Mouse</NavLink>
+                    <NavLink to='/category/mouse'>Mouse</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/categoria/teclado'>Teclados</NavLink>
+                    <NavLink to='/category/teclado'>Teclados</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/categoria/auriculares">Auriculares</NavLink>
+                    <NavLink to="/category/auriculares">Auriculares</NavLink>
                 </li>
                 <li>
                     <NavLink to="/cart">

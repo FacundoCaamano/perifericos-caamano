@@ -20,7 +20,7 @@ const productos=[
 export const ItemListContainer=()=>{
   const [data, setData]= useState([]);
   
-  const{ mouse }=useParams()
+  const{ id }=useParams()
 
   useEffect(()=>{
     const getData= new Promise((resolve, reject) => {
@@ -28,12 +28,12 @@ export const ItemListContainer=()=>{
         resolve(productos)
       },2000)
     });
-    if(mouse){
-      getData.then(res => setData(res.filter(productos=>productos.categoria===mouse)))  
+    if(id){
+      getData.then(res => setData(res.filter(productos=>productos.categoria===id)))  
     }else{
       getData.then(res => setData(res))
     }
-  },[mouse])
+  },[id])
 
     const onAdd =(quantity)=>{
       console.log(`compraste ${quantity} unidades`)
