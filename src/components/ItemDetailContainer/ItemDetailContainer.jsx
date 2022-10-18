@@ -17,6 +17,8 @@ export const ItemDetailContainer=()=>{
      },[id])
     
     return(
-        <ItemDetail data={data}/>
+        <div>
+            <ItemDetail data={data}/>
+        </div>
     )
 }

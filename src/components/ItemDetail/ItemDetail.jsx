@@ -1,5 +1,13 @@
 import "./ItemDetail.css"
+import { ItemCount } from "../ItemCount/ItemCount"
+import { useState } from "react"
+import { CartWidget } from "../CartWidget/CartWidget"
+
 export const ItemDetail=({data})=>{
+    const [count, setCount]=useState(0)
+    const addProducto=(variableContador)=>{
+        setCount(variableContador)
+    }
     return(
         <div>
             <img src={data.img} alt="" />
@@ -15,7 +23,8 @@ export const ItemDetail=({data})=>{
                         <p>{data.modelo}</p> 
                         <p>{data.categoria}</p>  
                     </div>
-                    
+                    <ItemCount stock={10} initial={1} onAdd={addProducto}/>
+                    <CartWidget contador={count}/>
                 </div>
             </div>
         </div>
