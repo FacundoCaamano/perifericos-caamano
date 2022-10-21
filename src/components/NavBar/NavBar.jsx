@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import { CartWidget } from "../CartWidget/CartWidget";
-import { NavLink } from 'react-router-dom'
+import { NavLink , Link } from 'react-router-dom'
 export const NavBar=() =>{
     return (
         <nav className="navegacion">
@@ -19,9 +19,9 @@ export const NavBar=() =>{
                     <NavLink to="/category/auriculares">Auriculares</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cart">
+                    <Link to="/cart">
                         <CartWidget/>
-                    </NavLink>
+                    </Link>
                 </li>
             </ul>
             

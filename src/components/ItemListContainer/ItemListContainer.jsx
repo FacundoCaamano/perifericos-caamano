@@ -26,14 +26,11 @@ export const ItemListContainer=()=>{
     }
   },[id])
 
-    // const onAdd =(quantity)=>{
-    //   console.log(`compraste ${quantity} unidades`)
-    // }
 
     return(
         <div>
             <div className="contenedor__items">
-              {/* <ItemCount initial={1} stock={20} onAdd={onAdd}/> */}
+              
               <ItemList data={data}/>
             </div>
         </div>

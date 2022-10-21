@@ -1,12 +1,18 @@
 import "./ItemDetail.css"
 import { ItemCount } from "../ItemCount/ItemCount"
-import { useState } from "react"
-import { CartWidget } from "../CartWidget/CartWidget"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+
 
 export const ItemDetail=({data})=>{
-    const [count, setCount]=useState(0)
-    const addProducto=(variableContador)=>{
-        setCount(variableContador)
+
+    const {addProduct}=useContext(CartContext)
+    
+
+    const addProducto=(quantity)=>{
+        
+        console.log(quantity)
+        addProduct(data,quantity)
     }
     return(
         <div>
@@ -24,7 +30,7 @@ export const ItemDetail=({data})=>{
                         <p>{data.categoria}</p>  
                     </div>
                     <ItemCount stock={10} initial={1} onAdd={addProducto}/>
-                    <CartWidget contador={count}/>
+                    
                 </div>
             </div>
         </div>
