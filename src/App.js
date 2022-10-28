@@ -4,7 +4,6 @@ import {ItemListContainer} from "./components/ItemListContainer/ItemListContaine
 import {ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CartContainer } from './components/CartContainer/CartContainer';
-import { CartWidget } from './components/CartWidget/CartWidget';
 import { CartProvider } from './context/CartContext';
 function App() {
   return (
