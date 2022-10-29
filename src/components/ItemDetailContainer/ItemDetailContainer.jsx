@@ -1,20 +1,25 @@
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import React,{ useEffect,useState} from "react"
 import {useParams} from "react-router-dom"
-import { doc, getDoc, getFirestore } from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../../utils/firebase"
 
 
 export const ItemDetailContainer=()=>{
     const[data,setData]=useState({});
     const{ id }=useParams()
      useEffect(()=>{
-         const querydb=getFirestore()
-         const queryDoc=doc(querydb,"productos",id)
-         getDoc(queryDoc)
-         .then(res=>setData(
-            {id:res.id,
-            ...res.data()
-        }))
+        const getProducto=async()=>{
+            //referencia
+            const queryRef=doc(db,"productos",id);
+            const response= await getDoc(queryRef);
+            const newDoc= {
+                ...response.data(),
+                id:response.id
+            }
+           setData(newDoc)
+        }
+        getProducto()
      },[])
     
     return(
