@@ -4,16 +4,28 @@
 }
 
 .producto__foto{
-    width: 320px;
-    height: 220px;
+   height: 200px;
+}
+
+.contenedor__producto--foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor__producto--info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .contenedor__card{
     border: 3px double rgb(208, 136, 221);
     border-radius: 20px;
     padding: 10px;
-    width: 340px;
     display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 18px;
+    width: 600px;
 }
