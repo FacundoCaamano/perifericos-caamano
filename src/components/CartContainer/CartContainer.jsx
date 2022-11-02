@@ -21,16 +21,17 @@ export const CartContainer =()=>{
                 direccion:evt.target[3].value
             },
             items: productosCarrito,
-            total: getTotalPrice()
+            fecha: Date(),
+            total:getTotalPrice()
         }
         //crear referencia
         const queryRef=collection(db,"orders")
         //informacion que vamos a agregar
         addDoc(queryRef, compra).then((resultado)=>{
-            console.log(resultado)
+            
             setCompraId(resultado.id)
         })
-
+        
 
     }
 
