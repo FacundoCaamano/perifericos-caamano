@@ -20,7 +20,7 @@ export const ItemDetailContainer=()=>{
            setData(newDoc)
         }
         getProducto()
-     },[])
+     },[id])
     
     return(
         <div>

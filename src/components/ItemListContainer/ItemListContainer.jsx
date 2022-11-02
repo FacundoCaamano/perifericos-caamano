@@ -3,16 +3,16 @@ import React,{useState, useEffect} from "react";
 import { ItemList } from "../ItemList/ItemList";
 import {useParams} from "react-router-dom"
 import { db } from "../../utils/firebase";
-import { collection, getDocs,getFirestore,query,where } from "firebase/firestore";
+import { collection, getDocs,query,where } from "firebase/firestore";
 
 
 
 export const ItemListContainer=()=>{
   const [data, setData]= useState([]);
 
-  
-  
   const{ id }=useParams()
+
+  const [loading,setLoading]=useState(true)
 
   useEffect(()=>{
 
@@ -28,6 +28,9 @@ export const ItemListContainer=()=>{
         
       })
       setData(docs)
+      setTimeout(()=>{
+        setLoading(false)
+      },1000)
     });
 
       
@@ -38,8 +41,10 @@ export const ItemListContainer=()=>{
     return(
         <div>
             <div className="contenedor__items">
+              {
+                loading ? <p>Cargando...</p> : <ItemList data={data}/>
+              }
               
-              <ItemList data={data}/>
             </div>
         </div>
     )

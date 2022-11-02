@@ -2,17 +2,18 @@ import "./ItemDetail.css"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 export const ItemDetail=({data})=>{
-
+    const [goToCart,setGoToCart]=useState(false)
     const {addProduct}=useContext(CartContext)
     
 
     const addProducto=(quantity)=>{
-        
-        console.log(quantity)
         addProduct(data,quantity)
+        setGoToCart(true)
     }
     return(
         <div>
@@ -29,8 +30,10 @@ export const ItemDetail=({data})=>{
                         <p>{data.modelo}</p> 
                         <p>{data.categoria}</p>  
                     </div>
-                    <ItemCount stock={10} initial={1} onAdd={addProducto}/>
                     
+                    {
+                        goToCart ? <Link to='/cart'>Ir al carro</Link>: <ItemCount stock={10} initial={1} onAdd={addProducto}/>
+                    }
                 </div>
             </div>
         </div>

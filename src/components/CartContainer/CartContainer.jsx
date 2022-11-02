@@ -2,11 +2,12 @@ import { useContext,useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { db } from "../../utils/firebase"
 import { collection, addDoc } from "firebase/firestore"
+import { Link } from "react-router-dom"
 
 
 export const CartContainer =()=>{
     const value =useContext(CartContext)
-    const {productosCarrito,getTotalPrice, getTotalProducts,removeItem}=value;
+    const {productosCarrito,getTotalPrice, getTotalProducts,removeItem,clearCart}=value;
     const [compraId,setCompraId]=useState('')
 
     
@@ -33,9 +34,17 @@ export const CartContainer =()=>{
 
     }
 
+    if(productosCarrito.length===0){
+        return(
+            <>
+                <p>No hay productos en su carro empieza a realizar sus compras :D</p>
+                <Link to='/'>Ir al inicio</Link>
+            </>
+        )
+    }
+
     return(
     <div>
-        <p>pagina de carrito</p>
         <div>
             {
                 productosCarrito.map((producto)=>(
@@ -49,6 +58,7 @@ export const CartContainer =()=>{
                     </div>
                 ))
             }
+            <button onClick={()=>clearCart()}>Elminar todo</button>
             <p><strong>Precio total:</strong>{getTotalPrice()}</p>
             <p><strong>Cantidad de productos:</strong>{getTotalProducts()}</p>
             <form onSubmit={sendOrden}>

@@ -50,8 +50,10 @@ export const CartProvider=({children})=>{
 
     }
 
+    const clearCart =()=>setProductosCarrito([])
+
     return(
-        <CartContext.Provider value={{productosCarrito, addProduct, getTotalPrice, getTotalProducts,removeItem}}>
+        <CartContext.Provider value={{productosCarrito, addProduct, getTotalPrice, getTotalProducts,removeItem,clearCart}}>
             {children}
         </CartContext.Provider>
     )
