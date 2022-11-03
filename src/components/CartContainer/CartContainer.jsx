@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext"
 import { db } from "../../utils/firebase"
 import { collection, addDoc } from "firebase/firestore"
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 
 export const CartContainer =()=>{
@@ -10,8 +11,14 @@ export const CartContainer =()=>{
     const {productosCarrito,getTotalPrice, getTotalProducts,removeItem,clearCart}=value;
     const [compraId,setCompraId]=useState('')
 
-    
+    const mostrarAlerta=()=>{
+        Swal.fire(
+            'Listo','Su compra se realizo exitosamente', 'success')
+    }
+
     const sendOrden=(evt)=>{
+        mostrarAlerta()
+        clearCart()
         evt.preventDefault();
         const compra ={
             buyer:{
@@ -40,12 +47,14 @@ export const CartContainer =()=>{
             <>
                 <p>No hay productos en su carro empieza a realizar sus compras :D</p>
                 <Link to='/'>Ir al inicio</Link>
+                {compraId && <h3>el id de su compra es {compraId}</h3>}
             </>
         )
     }
 
     return(
     <div>
+        {compraId && <h3>el id de su compra es {compraId}</h3>}
         <div>
             {
                 productosCarrito.map((producto)=>(
@@ -64,20 +73,15 @@ export const CartContainer =()=>{
             <p><strong>Cantidad de productos:</strong>{getTotalProducts()}</p>
             <form onSubmit={sendOrden}>
                 <label>Nombre</label>
-                <input type="text" placeholder="Nombre" />
+                <input type="text" placeholder="Nombre" required/>
                 <label>Telefono</label>
-                <input type="number" placeholder="Numero de telefono" />
+                <input type="number" placeholder="Numero de telefono" required/>
                 <label>Correo</label>
-                <input type="email" placeholder="Ingrese su Email" />
+                <input type="email" placeholder="Ingrese su Email" required/>
                 <label>Direccion</label>
-                <input type="direccion" placeholder="Direccion de envio" />
-                <button type="submit">Enviar</button>
-
+                <input type="direccion" placeholder="Direccion de envio" required/>
+                <button type="submit" >Enviar</button>
             </form>
-            <div>
-                {compraId && <h3>el id de su compra es {compraId}</h3>}
-                       
-            </div>
         </div>
     </div>
     )
