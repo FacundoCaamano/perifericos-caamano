@@ -42,7 +42,7 @@ export const ItemListContainer=()=>{
         <div>
             <div className="contenedor__items">
               {
-                loading ? <p>Cargando...</p> : <ItemList data={data}/>
+                loading ? <p className="Loading">Cargando...</p> : <ItemList data={data}/>
               }
               
             </div>

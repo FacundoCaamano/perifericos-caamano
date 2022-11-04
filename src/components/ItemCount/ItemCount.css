@@ -1,7 +1,24 @@
-.contenedor-boton{
-    background-color: white;
-    border: 5px solid red;
+.contenedor{
+    margin: 10px;
     padding: 10px;
+    background-color: rgb(205, 227, 242);
+    border: 5px double rgb(123, 89, 177);
+    height: max-content;
+    width: 300px;
+    transform:skewX(-20deg);
+}
+.contenedor--boton{
+    transform: skewX(20deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   
+}
+.contenedor--boton__btns{
+    width: 170px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 span{
