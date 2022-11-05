@@ -31,10 +31,7 @@ export const ItemListContainer=()=>{
       setTimeout(()=>{
         setLoading(false)
       },1000)
-    });
-
-      
-          
+    });       
   },[id])
 
 

@@ -7,16 +7,16 @@ export const NavBar=() =>{
             <NavLink to='/'><img className="logo" src="https://cdn-icons-png.flaticon.com/512/2868/2868132.png" alt="logo" /></NavLink>
             <ul className="list">
                 <li>
-                    <NavLink to='/'>inicio</NavLink>
+                    <NavLink className="btnsNavegacion" to='/'>inicio</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/category/mouse'>Mouse</NavLink>
+                    <NavLink className="btnsNavegacion" to='/category/mouse'>Mouse</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/category/teclado'>Teclados</NavLink>
+                    <NavLink className="btnsNavegacion" to='/category/teclado'>Teclados</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/category/auriculares">Auriculares</NavLink>
+                    <NavLink className="btnsNavegacion" to="/category/auriculares">Auriculares</NavLink>
                 </li>
                 <li>
                     <Link to="/cart">

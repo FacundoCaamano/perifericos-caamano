@@ -46,16 +46,15 @@ export const CartContainer =()=>{
     if(productosCarrito.length===0){
         return(
             <>
-                <p>No hay productos en su carro empieza a realizar sus compras :D</p>
-                <Link to='/'>Ir al inicio</Link>
-                {compraId && <h3>el id de su compra es {compraId}</h3>}
+                <p className="carritoVacio">No hay productos en su carro empieza a realizar sus compras :D</p>
+                <Link to='/' className="irAlIncio">Ir al inicio</Link>
+                {compraId && <h3 className="idCompra">El id de su compra es {compraId}</h3>}
             </>
         )
     }
 
     return(
     <div>
-        {compraId && <h3>el id de su compra es {compraId}</h3>}
         <div>
             {
                 productosCarrito.map((producto)=>(

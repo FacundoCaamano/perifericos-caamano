@@ -24,11 +24,13 @@ export const ItemDetail=({data})=>{
                         <h3>Marca: </h3>
                         <h3>Modelo: </h3>
                         <h3>Categoria: </h3>
+                        <h3>Precio:</h3>
                     </div>
                     <div className="datos">
                         <h3>{data.marca}</h3>
                         <h3>{data.modelo}</h3> 
-                        <h3>{data.categoria}</h3>  
+                        <h3>{data.categoria}</h3> 
+                        <h3>${data.price}</h3> 
                     </div>
                     
                     {
